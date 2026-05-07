@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/waipodyeamkeaw/.claude/plugins/**)",
+      "Bash(find /Users/waipodyeamkeaw -name \"puppeteer\" -maxdepth 8 2>/dev/null | head -5; ls /Users/waipodyeamkeaw/AppData 2>/dev/null || echo \"no AppData\")",
+      "Read(//Users/waipodyeamkeaw/**)",
+      "Bash(node -e \"require\\('/Users/waipodyeamkeaw/Documents/logistics/node_modules/puppeteer'\\); console.log\\('ok'\\)\")",
+      "Bash(node serve.mjs)",
+      "Bash(curl -s http://localhost:3000)"
+    ]
+  }
+}
