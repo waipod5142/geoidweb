@@ -96,8 +96,10 @@
     .customer-logo { filter:grayscale(100%) opacity(0.5); transition:filter 0.2s; }
     .customer-logo:hover { filter:grayscale(0%) opacity(1); }
 
-    .partner-card { border:1px solid var(--border); border-radius:8px; padding:18px 24px; display:flex; align-items:center; justify-content:center; transition:border-color 0.2s, box-shadow 0.2s; background:#fff; }
+    .partner-card { border:1px solid var(--border); border-radius:8px; padding:20px 24px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; transition:border-color 0.2s, box-shadow 0.2s; background:#fff; }
     .partner-card:hover { border-color:var(--green); box-shadow:0 4px 16px rgba(141,198,63,0.12); }
+    .partner-logo { height:48px; width:48px; object-fit:contain; filter:grayscale(1); opacity:0.7; transition:filter 0.2s, opacity 0.2s; border-radius:8px; }
+    .partner-card:hover .partner-logo { filter:grayscale(0); opacity:1; }
 
     .result-card { border-radius:10px; overflow:hidden; background:#fff; border:1px solid var(--border); transition:box-shadow 0.25s, transform 0.2s; }
     .result-card:hover { box-shadow:0 16px 40px rgba(0,0,0,0.12); transform:translateY(-4px); }
@@ -196,15 +198,15 @@
       </div>
       <div class="mt-12 pt-8 grid grid-cols-3 gap-6 fade-up-4" style="border-top:1px solid rgba(255,255,255,0.1);">
         <div>
-          <div class="stat-num">500<span style="color:#fff;font-size:28px;">+</span></div>
+          <div class="stat-num">900<span style="color:#fff;font-size:28px;">+</span></div>
           <div class="text-xs mt-1" style="color:#888;letter-spacing:0.04em;" data-i18n="hero_stat1">ลูกค้าองค์กร</div>
         </div>
         <div>
-          <div class="stat-num">50K<span style="color:#fff;font-size:28px;">+</span></div>
+          <div class="stat-num">15K<span style="color:#fff;font-size:28px;">+</span></div>
           <div class="text-xs mt-1" style="color:#888;letter-spacing:0.04em;" data-i18n="hero_stat2">ยานพาหนะที่ติดตาม</div>
         </div>
         <div>
-          <div class="stat-num">15<span style="color:#fff;font-size:28px;">+</span></div>
+          <div class="stat-num">14<span style="color:#fff;font-size:28px;">+</span></div>
           <div class="text-xs mt-1" style="color:#888;letter-spacing:0.04em;" data-i18n="hero_stat3">ปีแห่งความเชี่ยวชาญ</div>
         </div>
       </div>
@@ -266,7 +268,7 @@
         <h2 class="section-title text-4xl md:text-5xl mb-5" data-i18n="about_title">ผู้ให้บริการจัดการยานพาหนะ<br/>ชั้นนำในประเทศไทย</h2>
         <div class="green-line mb-6"></div>
         <p class="text-base leading-relaxed mb-4" style="color:#555;font-family:'Sarabun','Source Sans 3',sans-serif;" data-i18n="about_p1">
-          ก่อตั้งมากว่า 15 ปี จีโอไอดีเติบโตขึ้นเป็นบริษัทติดตาม GPS และเทเลแมติกส์ที่น่าเชื่อถือที่สุดในเอเชีย เราผสานฮาร์ดแวร์ล้ำสมัยกับแพลตฟอร์มซอฟต์แวร์อัจฉริยะ เพื่อช่วยให้ธุรกิจบริหารจัดการยานพาหนะด้วยความแม่นยำ
+          ก่อตั้งมากว่า 14 ปีในเอเชีย จีโอไอดีเติบโตขึ้นเป็นบริษัทติดตาม GPS และเทเลแมติกส์ที่น่าเชื่อถือที่สุดในเอเชีย เราผสานฮาร์ดแวร์ล้ำสมัยกับแพลตฟอร์มซอฟต์แวร์อัจฉริยะ เพื่อช่วยให้ธุรกิจบริหารจัดการยานพาหนะด้วยความแม่นยำ
         </p>
         <p class="text-base leading-relaxed mb-6" style="color:#555;font-family:'Sarabun','Source Sans 3',sans-serif;" data-i18n="about_p2">
           ตั้งแต่ยานพาหนะขนาดเล็กไปจนถึงการดำเนินงานโลจิสติกส์ระดับองค์กร โซลูชันของเราขยายตัวได้ตามความต้องการ มอบข้อมูลเชิงลึกแบบเรียลไทม์ที่ช่วยลดต้นทุน เพิ่มความปลอดภัย และเพิ่มประสิทธิภาพสูงสุด
@@ -274,18 +276,18 @@
         <!-- Affiliate badge -->
         <div class="flex items-center gap-3 mb-6 p-3 rounded-lg" style="background:#f8fef2;border:1px solid rgba(141,198,63,0.25);">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="flex-shrink-0"><circle cx="12" cy="12" r="10" fill="#8DC63F" opacity="0.15"/><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z" stroke="#8DC63F" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="#8DC63F" stroke-width="2" stroke-linecap="round"/></svg>
-          <span class="text-xs font-semibold" style="color:#5a8a1f;" data-i18n="about_affiliate">ตัวแทนที่ได้รับการรับรองอย่างเป็นทางการจาก Geoid</span>
+          <span class="text-xs font-semibold" style="color:#5a8a1f;" data-i18n="about_affiliate">ตัวแทนที่ได้รับการรับรองอย่างเป็นทางการจาก Geoid Asia</span>
         </div>
         <a href="#solutions" class="btn-green-outline" data-i18n="about_cta">เรียนรู้เพิ่มเติม</a>
       </div>
       <div class="grid grid-cols-2 gap-5">
         <div class="card text-center">
-          <div class="stat-num mb-1" data-i18n="stat_clients_num">500<span style="color:#ddd;font-size:22px;">+</span></div>
+          <div class="stat-num mb-1" data-i18n="stat_clients_num">900<span style="color:#ddd;font-size:22px;">+</span></div>
           <div class="text-sm font-semibold" style="color:#444;" data-i18n="stat_clients_label">ลูกค้าองค์กร</div>
           <div class="text-xs mt-1" style="color:#999;" data-i18n="stat_clients_sub">ทั่วเอเชีย</div>
         </div>
         <div class="card text-center">
-          <div class="stat-num mb-1" data-i18n="stat_vehicles_num">50K<span style="color:#ddd;font-size:22px;">+</span></div>
+          <div class="stat-num mb-1" data-i18n="stat_vehicles_num">15K<span style="color:#ddd;font-size:22px;">+</span></div>
           <div class="text-sm font-semibold" style="color:#444;" data-i18n="stat_vehicles_label">ยานพาหนะที่ติดตาม</div>
           <div class="text-xs mt-1" style="color:#999;" data-i18n="stat_vehicles_sub">ติดตามแบบเรียลไทม์ทุกวัน</div>
         </div>
@@ -295,9 +297,9 @@
           <div class="text-xs mt-1" style="color:#999;" data-i18n="stat_uptime_sub">รับประกัน SLA</div>
         </div>
         <div class="card text-center">
-          <div class="stat-num mb-1" data-i18n="stat_years_num">15<span style="color:#ddd;font-size:22px;">+</span></div>
+          <div class="stat-num mb-1" data-i18n="stat_years_num">14<span style="color:#ddd;font-size:22px;">+</span></div>
           <div class="text-sm font-semibold" style="color:#444;" data-i18n="stat_years_label">ปีแห่งประสบการณ์</div>
-          <div class="text-xs mt-1" style="color:#999;" data-i18n="stat_years_sub">ตั้งแต่ปี 2552</div>
+          <div class="text-xs mt-1" style="color:#999;" data-i18n="stat_years_sub">ผู้นำด้านเทเลแมติกส์ในเอเชีย</div>
         </div>
       </div>
     </div>
@@ -451,7 +453,7 @@
           </div>
           <div class="flex gap-4 items-start">
             <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center" style="background:var(--green);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg></div>
-            <div><div class="font-bold mb-1" style="font-family:'Barlow Condensed','Sarabun',sans-serif;font-size:17px;" data-i18n="why5_title">พร้อมสำหรับการรับรอง DLT</div><p class="text-sm leading-relaxed" style="color:#666;font-family:'Sarabun','Source Sans 3',sans-serif;" data-i18n="why5_desc">ได้รับการรับรองจากกรมการขนส่งทางบกของประเทศไทยอย่างครบถ้วน ปฏิบัติตามกฎระเบียบโดยไม่ต้องยุ่งยาก</p></div>
+            <div><div class="font-bold mb-1" style="font-family:'Barlow Condensed','Sarabun',sans-serif;font-size:17px;" data-i18n="why5_title">พร้อมสำหรับการรับรอง DLT และ NBTC</div><p class="text-sm leading-relaxed" style="color:#666;font-family:'Sarabun','Source Sans 3',sans-serif;" data-i18n="why5_desc">ได้รับการรับรองจากกรมขนส่งทางบก และสำนักงานคณะกรรมการกิจการกระจายเสียง กิจการโทรทัศน์ และกิจการโทรคมนาคมแห่งชาติ (NBTC) อย่างครบถ้วน ปฏิบัติตามกฎระเบียบโดยไม่ต้องยุ่งยาก</p></div>
           </div>
         </div>
       </div>
@@ -463,16 +465,15 @@
             <tr style="background:#111;">
               <th class="text-left px-5 py-4 text-xs font-semibold tracking-wider" style="color:#888;" data-i18n="tbl_feature">คุณสมบัติ</th>
               <th class="px-5 py-4 text-xs font-semibold tracking-wider text-center" style="color:var(--green);">Geoid</th>
-              <th class="px-5 py-4 text-xs font-semibold tracking-wider text-center" style="color:#888;" data-i18n="tbl_others">รายอื่น</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-top:1px solid var(--border);" class="bg-white"><td class="px-5 py-3.5" style="color:#444;" data-i18n="tbl1">ติดตามแบบเรียลไทม์ (&lt;10 วินาที)</td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></td><td class="px-5 py-3.5 text-center text-xs" style="color:#ccc;" data-i18n="tbl_varies">แตกต่างกัน</td></tr>
-            <tr style="border-top:1px solid var(--border);background:#fafafa;"><td class="px-5 py-3.5" style="color:#444;" data-i18n="tbl2">รับรองโดย DLT</td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#e5e5e5"/><path d="M8 8l8 8M16 8l-8 8" stroke="#bbb" stroke-width="2" stroke-linecap="round"/></svg></td></tr>
-            <tr style="border-top:1px solid var(--border);" class="bg-white"><td class="px-5 py-3.5" style="color:#444;" data-i18n="tbl3">สนับสนุนในพื้นที่ 24/7</td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#e5e5e5"/><path d="M8 8l8 8M16 8l-8 8" stroke="#bbb" stroke-width="2" stroke-linecap="round"/></svg></td></tr>
-            <tr style="border-top:1px solid var(--border);background:#fafafa;"><td class="px-5 py-3.5" style="color:#444;" data-i18n="tbl4">Open API</td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></td><td class="px-5 py-3.5 text-center text-xs" style="color:#ccc;" data-i18n="tbl_partial">บางส่วน</td></tr>
-            <tr style="border-top:1px solid var(--border);" class="bg-white"><td class="px-5 py-3.5" style="color:#444;" data-i18n="tbl5">ติดตามเชื้อเพลิง</td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#e5e5e5"/><path d="M8 8l8 8M16 8l-8 8" stroke="#bbb" stroke-width="2" stroke-linecap="round"/></svg></td></tr>
-            <tr style="border-top:1px solid var(--border);background:#fafafa;"><td class="px-5 py-3.5" style="color:#444;" data-i18n="tbl6">แอปมือถือ</td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></td></tr>
+            <tr style="border-top:1px solid var(--border);" class="bg-white"><td class="px-5 py-3.5" style="color:#444;" data-i18n="tbl1">ติดตามแบบเรียลไทม์ (&lt;10 วินาที)</td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></td></tr>
+            <tr style="border-top:1px solid var(--border);background:#fafafa;"><td class="px-5 py-3.5" style="color:#444;" data-i18n="tbl2">รับรองโดย DLT และ NBTC</td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></td></tr>
+            <tr style="border-top:1px solid var(--border);" class="bg-white"><td class="px-5 py-3.5" style="color:#444;" data-i18n="tbl3">สนับสนุนในพื้นที่ 24/7</td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></td></tr>
+            <tr style="border-top:1px solid var(--border);background:#fafafa;"><td class="px-5 py-3.5" style="color:#444;" data-i18n="tbl4">Open API</td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></td></tr>
+            <tr style="border-top:1px solid var(--border);" class="bg-white"><td class="px-5 py-3.5" style="color:#444;" data-i18n="tbl5">ติดตามเชื้อเพลิง</td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></td></tr>
+            <tr style="border-top:1px solid var(--border);background:#fafafa;"><td class="px-5 py-3.5" style="color:#444;" data-i18n="tbl6">แอปมือถือ</td><td class="px-5 py-3.5 text-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="mx-auto"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M7 12l3.5 3.5L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></td></tr>
           </tbody>
         </table>
       </div>
@@ -520,14 +521,38 @@
       <p class="text-base max-w-xl mx-auto" style="color:#666;font-family:'Sarabun','Source Sans 3',sans-serif;" data-i18n="part_desc">จีโอไอดีผสานรวมกับผู้ให้บริการฮาร์ดแวร์และเทคโนโลยีคลาวด์ชั้นนำของโลก</p>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-      <div class="partner-card"><div><div class="font-bold text-base" style="color:#444;" data-i18n="part1_name">Teltonika Networks</div><div class="text-xs mt-0.5" style="color:#999;" data-i18n="part1_sub">อุปกรณ์ IoT</div></div></div>
-      <div class="partner-card"><div><div class="font-bold text-base" style="color:#444;" data-i18n="part2_name">Queclink</div><div class="text-xs mt-0.5" style="color:#999;" data-i18n="part2_sub">อุปกรณ์ GPS</div></div></div>
-      <div class="partner-card"><div><div class="font-bold text-base" style="color:#444;" data-i18n="part3_name">Google Maps Platform</div><div class="text-xs mt-0.5" style="color:#999;" data-i18n="part3_sub">แผนที่และการนำทาง</div></div></div>
-      <div class="partner-card"><div><div class="font-bold text-base" style="color:#444;" data-i18n="part4_name">Amazon Web Services</div><div class="text-xs mt-0.5" style="color:#999;" data-i18n="part4_sub">โครงสร้างพื้นฐานคลาวด์</div></div></div>
-      <div class="partner-card"><div><div class="font-bold text-base" style="color:#444;" data-i18n="part5_name">Concox</div><div class="text-xs mt-0.5" style="color:#999;" data-i18n="part5_sub">เครื่องติดตาม GPS</div></div></div>
-      <div class="partner-card"><div><div class="font-bold text-base" style="color:#444;" data-i18n="part6_name">Wialon</div><div class="text-xs mt-0.5" style="color:#999;" data-i18n="part6_sub">แพลตฟอร์มเทเลแมติกส์</div></div></div>
-      <div class="partner-card"><div><div class="font-bold text-base" style="color:#444;" data-i18n="part7_name">AIS / DTAC</div><div class="text-xs mt-0.5" style="color:#999;" data-i18n="part7_sub">การเชื่อมต่อ 4G/LTE</div></div></div>
-      <div class="partner-card"><div><div class="font-bold text-base" style="color:#444;" data-i18n="part8_name">HERE Technologies</div><div class="text-xs mt-0.5" style="color:#999;" data-i18n="part8_sub">ข้อมูลเชิงตำแหน่ง</div></div></div>
+      <div class="partner-card">
+        <img class="partner-logo" src="https://www.google.com/s2/favicons?domain=teltonika-networks.com&sz=128" alt="Teltonika Networks" onerror="this.style.display='none'">
+        <div><div class="font-bold text-base text-center" style="color:#444;" data-i18n="part1_name">Teltonika Networks</div><div class="text-xs mt-0.5 text-center" style="color:#999;" data-i18n="part1_sub">อุปกรณ์ IoT</div></div>
+      </div>
+      <div class="partner-card">
+        <img class="partner-logo" src="https://www.google.com/s2/favicons?domain=queclink.com&sz=128" alt="Queclink" onerror="this.style.display='none'">
+        <div><div class="font-bold text-base text-center" style="color:#444;" data-i18n="part2_name">Queclink</div><div class="text-xs mt-0.5 text-center" style="color:#999;" data-i18n="part2_sub">อุปกรณ์ GPS</div></div>
+      </div>
+      <div class="partner-card">
+        <img class="partner-logo" src="https://www.google.com/s2/favicons?domain=maps.google.com&sz=128" alt="Google Maps Platform" onerror="this.style.display='none'">
+        <div><div class="font-bold text-base text-center" style="color:#444;" data-i18n="part3_name">Google Maps Platform</div><div class="text-xs mt-0.5 text-center" style="color:#999;" data-i18n="part3_sub">แผนที่และการนำทาง</div></div>
+      </div>
+      <div class="partner-card">
+        <img class="partner-logo" src="https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=128" alt="Amazon Web Services" onerror="this.style.display='none'">
+        <div><div class="font-bold text-base text-center" style="color:#444;" data-i18n="part4_name">Amazon Web Services</div><div class="text-xs mt-0.5 text-center" style="color:#999;" data-i18n="part4_sub">โครงสร้างพื้นฐานคลาวด์</div></div>
+      </div>
+      <div class="partner-card">
+        <img class="partner-logo" src="https://www.google.com/s2/favicons?domain=jimiiot.com&sz=128" alt="Jimi IoT" onerror="this.style.display='none'">
+        <div><div class="font-bold text-base text-center" style="color:#444;" data-i18n="part5_name">Jimi IoT</div><div class="text-xs mt-0.5 text-center" style="color:#999;" data-i18n="part5_sub">เครื่องติดตาม GPS</div></div>
+      </div>
+      <div class="partner-card">
+        <img class="partner-logo" src="https://www.google.com/s2/favicons?domain=wialon.com&sz=128" alt="Wialon" onerror="this.style.display='none'">
+        <div><div class="font-bold text-base text-center" style="color:#444;" data-i18n="part6_name">Wialon</div><div class="text-xs mt-0.5 text-center" style="color:#999;" data-i18n="part6_sub">แพลตฟอร์มเทเลแมติกส์</div></div>
+      </div>
+      <div class="partner-card">
+        <img class="partner-logo" src="https://www.google.com/s2/favicons?domain=true.th&sz=128" alt="True" onerror="this.style.display='none'">
+        <div><div class="font-bold text-base text-center" style="color:#444;" data-i18n="part7_name">AIS / DTAC</div><div class="text-xs mt-0.5 text-center" style="color:#999;" data-i18n="part7_sub">การเชื่อมต่อ 4G/LTE</div></div>
+      </div>
+      <div class="partner-card">
+        <img class="partner-logo" src="https://overleap.tech/wp-content/uploads/2024/11/overleap.png" alt="Overleap" style="width:auto;max-width:110px;height:36px;" onerror="this.style.display='none'">
+        <div><div class="font-bold text-base text-center" style="color:#444;" data-i18n="part8_name">Overleap</div><div class="text-xs mt-0.5 text-center" style="color:#999;" data-i18n="part8_sub">การแปลงสู่ดิจิทัล</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -774,7 +799,7 @@
             <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#8DC63F" stroke-width="1.8"/><polyline points="22,6 12,13 2,6" stroke="#8DC63F" stroke-width="1.8"/></svg></div>
             <div>
               <div class="text-sm font-semibold mb-0.5" style="color:#222;" data-i18n="con_email_label">อีเมล</div>
-              <div class="text-sm" style="color:#666;">info@geoidit.com</div>
+              <div class="text-sm" style="color:#666;">geoid.thailand2025@gmail.com</div>
             </div>
           </div>
           <div class="flex items-start gap-4">
@@ -847,7 +872,24 @@
       <div class="md:col-span-2">
         <img src="brand_assets/GeoidLogo-no-mark-hires.png" alt="Geoid" class="h-8 w-auto mb-4" />
         <p class="text-sm leading-relaxed mb-3" style="color:#888;font-family:'Sarabun','Source Sans 3',sans-serif;max-width:280px;" data-i18n="foot_desc">บริษัทติดตาม GPS และจัดการยานพาหนะชั้นนำในประเทศไทย ได้รับความไว้วางใจจากกว่า 500+ องค์กรทั่วเอเชีย</p>
-        <p class="text-xs mb-5" style="color:#666;font-family:'Sarabun','Source Sans 3',sans-serif;" data-i18n="foot_affiliate_note">ตัวแทนที่ได้รับการรับรองอย่างเป็นทางการจาก Geoid</p>
+        <p class="text-xs mb-4" style="color:#666;font-family:'Sarabun','Source Sans 3',sans-serif;" data-i18n="foot_affiliate_note">ตัวแทนที่ได้รับการรับรองอย่างเป็นทางการจาก Geoid Asia</p>
+        <p class="text-xs mb-3" style="color:#8DC63F;font-family:'Sarabun','Source Sans 3',sans-serif;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;">รับรองโดย</p>
+        <div class="flex items-center gap-3 mb-5 flex-wrap">
+          <a href="https://www.dlt.go.th/th" target="_blank" rel="noopener" title="กรมการขนส่งทางบก"
+             style="display:flex;flex-direction:column;align-items:center;gap:6px;background:#fff;border-radius:10px;padding:10px 14px;transition:box-shadow 0.2s,transform 0.2s;"
+             onmouseover="this.style.boxShadow='0 4px 16px rgba(141,198,63,0.35)';this.style.transform='translateY(-2px)'"
+             onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
+            <img src="https://www.dlt.go.th/logo.png" alt="กรมการขนส่งทางบก" style="height:44px;width:auto;">
+            <span style="font-size:9px;font-weight:700;color:#444;letter-spacing:0.04em;white-space:nowrap;">กรมการขนส่งทางบก</span>
+          </a>
+          <a href="https://nbtc.go.th/Home.aspx?lang=th-th" target="_blank" rel="noopener" title="NBTC"
+             style="display:flex;flex-direction:column;align-items:center;gap:6px;background:#fff;border-radius:10px;padding:10px 14px;transition:box-shadow 0.2s,transform 0.2s;"
+             onmouseover="this.style.boxShadow='0 4px 16px rgba(141,198,63,0.35)';this.style.transform='translateY(-2px)'"
+             onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'">
+            <img src="https://www.google.com/s2/favicons?domain=nbtc.go.th&sz=128" alt="NBTC" style="height:44px;width:44px;">
+            <span style="font-size:9px;font-weight:700;color:#444;letter-spacing:0.04em;white-space:nowrap;">NBTC</span>
+          </a>
+        </div>
         <div class="flex gap-3">
           <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center" style="background:rgba(255,255,255,0.07);" onmouseover="this.style.background='var(--green)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="#ccc"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
           <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center" style="background:rgba(255,255,255,0.07);" onmouseover="this.style.background='var(--green)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="#ccc"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
@@ -924,19 +966,19 @@ const T = {
 
     about_tag:'เกี่ยวกับจีโอไอดี',
     about_title:'ผู้ให้บริการจัดการยานพาหนะ<br/>ชั้นนำในประเทศไทย',
-    about_p1:'ก่อตั้งมากว่า 15 ปี จีโอไอดีเติบโตขึ้นเป็นบริษัทติดตาม GPS และเทเลแมติกส์ที่น่าเชื่อถือที่สุดในเอเชีย เราผสานฮาร์ดแวร์ล้ำสมัยกับแพลตฟอร์มซอฟต์แวร์อัจฉริยะ เพื่อช่วยให้ธุรกิจบริหารจัดการยานพาหนะด้วยความแม่นยำ',
+    about_p1:'ก่อตั้งมากว่า 14 ปีในเอเชีย จีโอไอดีเติบโตขึ้นเป็นบริษัทติดตาม GPS และเทเลแมติกส์ที่น่าเชื่อถือที่สุดในเอเชีย เราผสานฮาร์ดแวร์ล้ำสมัยกับแพลตฟอร์มซอฟต์แวร์อัจฉริยะ เพื่อช่วยให้ธุรกิจบริหารจัดการยานพาหนะด้วยความแม่นยำ',
     about_p2:'ตั้งแต่ยานพาหนะขนาดเล็กไปจนถึงการดำเนินงานโลจิสติกส์ระดับองค์กร โซลูชันของเราขยายตัวได้ตามความต้องการ มอบข้อมูลเชิงลึกแบบเรียลไทม์ที่ช่วยลดต้นทุน เพิ่มความปลอดภัย และเพิ่มประสิทธิภาพสูงสุด',
-    about_affiliate:'ตัวแทนที่ได้รับการรับรองอย่างเป็นทางการจาก Geoid',
+    about_affiliate:'ตัวแทนที่ได้รับการรับรองอย่างเป็นทางการจาก Geoid Asia',
     about_cta:'เรียนรู้เพิ่มเติม',
 
-    stat_clients_num:'500<span style="color:#ddd;font-size:22px;">+</span>',
+    stat_clients_num:'900<span style="color:#ddd;font-size:22px;">+</span>',
     stat_clients_label:'ลูกค้าองค์กร', stat_clients_sub:'ทั่วเอเชีย',
-    stat_vehicles_num:'50K<span style="color:#ddd;font-size:22px;">+</span>',
+    stat_vehicles_num:'15K<span style="color:#ddd;font-size:22px;">+</span>',
     stat_vehicles_label:'ยานพาหนะที่ติดตาม', stat_vehicles_sub:'ติดตามแบบเรียลไทม์ทุกวัน',
     stat_uptime_num:'99.9<span style="color:#ddd;font-size:22px;">%</span>',
     stat_uptime_label:'ความเสถียรของระบบ', stat_uptime_sub:'รับประกัน SLA',
-    stat_years_num:'15<span style="color:#ddd;font-size:22px;">+</span>',
-    stat_years_label:'ปีแห่งประสบการณ์', stat_years_sub:'ตั้งแต่ปี 2552',
+    stat_years_num:'14<span style="color:#ddd;font-size:22px;">+</span>',
+    stat_years_label:'ปีแห่งประสบการณ์', stat_years_sub:'ผู้นำด้านเทเลแมติกส์ในเอเชีย',
 
     sol_tag:'สิ่งที่เรานำเสนอ', sol_title:'โซลูชันของเรา',
     sol_desc:'เครื่องมือเทเลแมติกส์และการจัดการยานพาหนะที่ครอบคลุม ออกแบบเพื่อความน่าเชื่อถือ ความสามารถในการขยายตัว และความสะดวกในการใช้งาน',
@@ -959,10 +1001,10 @@ const T = {
     why2_title:'โครงสร้างพื้นฐานคลาวด์ที่ขยายตัวได้', why2_desc:'แพลตฟอร์มของเราขยายตัวได้จาก 10 ถึง 100,000 คันโดยไม่มีการลดประสิทธิภาพ รับประกัน SLA 99.9%',
     why3_title:'ทีมสนับสนุนและความเชี่ยวชาญในพื้นที่', why3_desc:'ทีมงานในประเทศไทยที่ให้บริการติดตั้ง ฝึกอบรม และสนับสนุนทางเทคนิค 24/7 ในภาษาของคุณ',
     why4_title:'การผสานรวม API และระบบ', why4_desc:'Open REST APIs และการผสานรวมสำเร็จรูปกับระบบ ERP, TMS และ WMS เชื่อมต่อจีโอไอดีกับขั้นตอนการทำงานที่มีอยู่ได้อย่างราบรื่น',
-    why5_title:'พร้อมสำหรับการรับรอง DLT', why5_desc:'ได้รับการรับรองจากกรมการขนส่งทางบกของประเทศไทยอย่างครบถ้วน ปฏิบัติตามกฎระเบียบโดยไม่ต้องยุ่งยาก',
+    why5_title:'พร้อมสำหรับการรับรอง DLT และ NBTC', why5_desc:'ได้รับการรับรองจากกรมขนส่งทางบก และสำนักงานคณะกรรมการกิจการกระจายเสียง กิจการโทรทัศน์ และกิจการโทรคมนาคมแห่งชาติ (NBTC) อย่างครบถ้วน ปฏิบัติตามกฎระเบียบโดยไม่ต้องยุ่งยาก',
 
     tbl_feature:'คุณสมบัติ', tbl_others:'รายอื่น', tbl_varies:'แตกต่างกัน', tbl_partial:'บางส่วน',
-    tbl1:'ติดตามแบบเรียลไทม์ (&lt;10 วินาที)', tbl2:'รับรองโดย DLT',
+    tbl1:'ติดตามแบบเรียลไทม์ (&lt;10 วินาที)', tbl2:'รับรองโดย DLT และ NBTC',
     tbl3:'สนับสนุนในพื้นที่ 24/7', tbl4:'Open API', tbl5:'ติดตามเชื้อเพลิง', tbl6:'แอปมือถือ',
 
     cust_tag:'ได้รับความไว้วางใจจาก', cust_title:'ลูกค้าของเรา',
@@ -974,10 +1016,10 @@ const T = {
     part2_name:'Queclink', part2_sub:'อุปกรณ์ GPS',
     part3_name:'Google Maps Platform', part3_sub:'แผนที่และการนำทาง',
     part4_name:'Amazon Web Services', part4_sub:'โครงสร้างพื้นฐานคลาวด์',
-    part5_name:'Concox', part5_sub:'เครื่องติดตาม GPS',
+    part5_name:'Jimi IoT', part5_sub:'เครื่องติดตาม GPS',
     part6_name:'Wialon', part6_sub:'แพลตฟอร์มเทเลแมติกส์',
     part7_name:'True', part7_sub:'การเชื่อมต่อ 4G/LTE',
-    part8_name:'HERE Technologies', part8_sub:'ข้อมูลเชิงตำแหน่ง',
+    part8_name:'Overleap', part8_sub:'การแปลงสู่ดิจิทัล',
 
     res_tag:'กรณีศึกษา', res_title:'ผลลัพธ์จริงที่เห็นได้ชัด',
     res_desc:'ดูว่าบริษัทชั้นนำเปลี่ยนแปลงการดำเนินงานด้วยจีโอไอดีได้อย่างไร',
@@ -1026,7 +1068,7 @@ const T = {
     form_fleet_3:'51–200 คัน', form_fleet_4:'201–1,000 คัน', form_fleet_5:'1,000+ คัน',
 
     foot_desc:'บริษัทติดตาม GPS และจัดการยานพาหนะชั้นนำในประเทศไทย ได้รับความไว้วางใจจากกว่า 500+ องค์กรทั่วเอเชีย',
-    foot_affiliate_note:'ตัวแทนที่ได้รับการรับรองอย่างเป็นทางการจาก Geoid',
+    foot_affiliate_note:'ตัวแทนที่ได้รับการรับรองอย่างเป็นทางการจาก Geoid Asia',
     foot_solutions:'โซลูชัน', foot_industries:'อุตสาหกรรม', foot_company:'บริษัท',
     foot_sol1:'ติดตาม GPS', foot_sol2:'จัดการยานพาหนะ', foot_sol3:'พฤติกรรมผู้ขับขี่',
     foot_sol4:'กำหนดพื้นที่', foot_sol5:'ติดตามเชื้อเพลิง', foot_sol6:'วิเคราะห์ข้อมูล',
@@ -1056,17 +1098,17 @@ const T = {
     about_title:"Thailand's Leading<br/>Fleet Management Provider",
     about_p1:"Founded over 15 years ago, Geoid has grown to become Asia's most trusted GPS tracking and telematics company. We combine cutting-edge hardware with intelligent software platforms to help businesses manage their fleets with precision and confidence.",
     about_p2:"From small business fleets to enterprise logistics operations, our solutions scale to meet any requirement — delivering real-time insights that reduce costs, improve safety, and maximize efficiency.",
-    about_affiliate:'Authorized Affiliate of Geoid',
+    about_affiliate:'Authorized Affiliate of Geoid Asia',
     about_cta:'Learn More',
 
-    stat_clients_num:'500<span style="color:#ddd;font-size:22px;">+</span>',
+    stat_clients_num:'900<span style="color:#ddd;font-size:22px;">+</span>',
     stat_clients_label:'Enterprise Clients', stat_clients_sub:'Across Asia',
-    stat_vehicles_num:'50K<span style="color:#ddd;font-size:22px;">+</span>',
+    stat_vehicles_num:'15K<span style="color:#ddd;font-size:22px;">+</span>',
     stat_vehicles_label:'Vehicles Tracked', stat_vehicles_sub:'Daily real-time tracking',
     stat_uptime_num:'99.9<span style="color:#ddd;font-size:22px;">%</span>',
     stat_uptime_label:'Platform Uptime', stat_uptime_sub:'SLA guaranteed',
-    stat_years_num:'15<span style="color:#ddd;font-size:22px;">+</span>',
-    stat_years_label:'Years Experience', stat_years_sub:'Since 2009',
+    stat_years_num:'14<span style="color:#ddd;font-size:22px;">+</span>',
+    stat_years_label:'Years Experience', stat_years_sub:'Telematics Leader in Asia',
 
     sol_tag:'What We Offer', sol_title:'Our Solutions',
     sol_desc:'Comprehensive telematics and fleet management tools engineered for reliability, scalability, and ease of use.',
@@ -1089,10 +1131,10 @@ const T = {
     why2_title:'Scalable Cloud Infrastructure', why2_desc:'Our platform scales from 10 to 100,000 vehicles without performance degradation. Enterprise-grade availability with 99.9% SLA.',
     why3_title:'Local Support & Expertise', why3_desc:'On-the-ground teams across Thailand providing installation, training, and 24/7 technical support in your language.',
     why4_title:'API & System Integration', why4_desc:'Open REST APIs and pre-built integrations with ERP, TMS, and WMS systems. Connect Geoid into your existing workflows seamlessly.',
-    why5_title:'DLT Compliance Ready', why5_desc:"Fully certified for Thailand's Department of Land Transport regulations. Stay compliant without extra complexity.",
+    why5_title:'DLT & NBTC Compliance Ready', why5_desc:"Fully certified by Thailand's Department of Land Transport (DLT) and the National Broadcasting and Telecommunications Commission (NBTC). Stay compliant without extra complexity.",
 
     tbl_feature:'Feature', tbl_others:'Others', tbl_varies:'Varies', tbl_partial:'Partial',
-    tbl1:'Real-time tracking (&lt;10s)', tbl2:'DLT Certified',
+    tbl1:'Real-time tracking (&lt;10s)', tbl2:'DLT & NBTC Certified',
     tbl3:'24/7 Local Support', tbl4:'Open API', tbl5:'Fuel Monitoring', tbl6:'Mobile App',
 
     cust_tag:'Trusted By', cust_title:'Our Customers',
@@ -1104,10 +1146,10 @@ const T = {
     part2_name:'Queclink', part2_sub:'GPS Devices',
     part3_name:'Google Maps Platform', part3_sub:'Mapping & Routing',
     part4_name:'Amazon Web Services', part4_sub:'Cloud Infrastructure',
-    part5_name:'Concox', part5_sub:'GPS Trackers',
+    part5_name:'Jimi IoT', part5_sub:'GPS Trackers',
     part6_name:'Wialon', part6_sub:'Telematics Platform',
     part7_name:'True', part7_sub:'4G/LTE Connectivity',
-    part8_name:'HERE Technologies', part8_sub:'Location Intelligence',
+    part8_name:'Overleap', part8_sub:'Digital Transformation',
 
     res_tag:'Case Studies', res_title:'Real Results Feel',
     res_desc:'See how leading companies transformed their operations with Geoid.',
@@ -1156,7 +1198,7 @@ const T = {
     form_fleet_3:'51–200 vehicles', form_fleet_4:'201–1,000 vehicles', form_fleet_5:'1,000+ vehicles',
 
     foot_desc:"Thailand's leading GPS tracking and fleet management company. Trusted by 500+ enterprises across Asia.",
-    foot_affiliate_note:'Authorized Affiliate of Geoid',
+    foot_affiliate_note:'Authorized Affiliate of Geoid Asia',
     foot_solutions:'Solutions', foot_industries:'Industries', foot_company:'Company',
     foot_sol1:'GPS Tracking', foot_sol2:'Fleet Management', foot_sol3:'Driver Behavior',
     foot_sol4:'Geofencing', foot_sol5:'Fuel Monitoring', foot_sol6:'Analytics',
