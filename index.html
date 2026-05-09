@@ -76,7 +76,7 @@
     .green-line { width:48px; height:3px; background:var(--green); border-radius:2px; }
 
     /* Hero */
-    .hero-bg { background:linear-gradient(135deg,#0d0d0d 0%,#1a1a1a 40%,#141f0a 100%); position:relative; overflow:hidden; }
+    .hero-bg { background: linear-gradient(135deg,rgba(13,13,13,0.88) 0%,rgba(26,26,26,0.82) 40%,rgba(20,31,10,0.90) 100%), url('https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?w=1920&q=80') center/cover no-repeat; position:relative; overflow:hidden; }
     .hero-bg::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(141,198,63,0.08) 0%, transparent 60%), radial-gradient(ellipse 50% 80% at 20% 20%, rgba(141,198,63,0.05) 0%, transparent 50%); pointer-events:none; }
     .stat-num { font-family:'Barlow Condensed','Sarabun',sans-serif; font-size:42px; font-weight:800; color:var(--green); line-height:1; }
 
@@ -595,13 +595,13 @@
       </div>
       <div class="result-card">
         <div style="overflow:hidden;height:200px;position:relative;">
-          <img src="https://placehold.co/480x200/2a0a0a/f59e0b?text=Government+Fleet" alt="Government" class="result-img w-full h-full object-cover" />
+          <img src="https://placehold.co/480x200/1a0f00/f59e0b?text=Mining+Fleet" alt="Mining Fleet" class="result-img w-full h-full object-cover" />
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 60%);"></div>
-          <span class="absolute bottom-3 left-4 text-xs font-bold tracking-wider uppercase" style="color:#f59e0b;" data-i18n="res3_cat">ภาครัฐ</span>
+          <span class="absolute bottom-3 left-4 text-xs font-bold tracking-wider uppercase" style="color:#f59e0b;" data-i18n="res3_cat">เหมืองแร่</span>
         </div>
         <div class="p-6">
-          <h3 class="font-bold text-lg mb-2" style="font-family:'Barlow Condensed','Sarabun',sans-serif;" data-i18n="res3_title">หน่วยงานภาครัฐ: ผ่านมาตรฐาน DLT ใน 90 วัน</h3>
-          <p class="text-sm leading-relaxed mb-4" style="color:#666;font-family:'Sarabun','Source Sans 3',sans-serif;" data-i18n="res3_desc">หน่วยงานภาครัฐใช้จีโอไอดีสำหรับการรับรอง DLT ครบถ้วนกับกองยานเทศบาล 1,200 คันใน 90 วัน</p>
+          <h3 class="font-bold text-lg mb-2" style="font-family:'Barlow Condensed','Sarabun',sans-serif;" data-i18n="res3_title">กองยานเหมืองแร่: ติดตามรถในเหมืองและเหมืองหินแบบเรียลไทม์</h3>
+          <p class="text-sm leading-relaxed mb-4" style="color:#666;font-family:'Sarabun','Source Sans 3',sans-serif;" data-i18n="res3_desc">ผู้ประกอบการเหมืองแร่ใช้จีโอไอดีติดตามกองยานในพื้นที่เหมืองและเหมืองหิน เพิ่มประสิทธิภาพการทำงานและความปลอดภัยของรถบรรทุกหนัก</p>
           <a href="#contact" class="text-sm font-semibold" style="color:var(--green);" data-i18n="read_case">อ่านกรณีศึกษา →</a>
         </div>
       </div>
@@ -1027,8 +1027,8 @@ const T = {
     res1_desc:'นำจีโอไอดีไปใช้กับยานพาหนะ 800 คัน ประหยัดเชื้อเพลิงได้ 23% ภายใน 6 เดือน',
     res2_cat:'ก่อสร้าง', res2_title:'บริษัทก่อสร้าง: การใช้อุปกรณ์เพิ่มขึ้น +35%',
     res2_desc:'การติดตามอุปกรณ์แบบเรียลไทม์และการกำหนดพื้นที่ลดเวลาว่างและเพิ่มการใช้ทรัพย์สินได้ 35%',
-    res3_cat:'ภาครัฐ', res3_title:'หน่วยงานภาครัฐ: ผ่านมาตรฐาน DLT ใน 90 วัน',
-    res3_desc:'หน่วยงานภาครัฐใช้จีโอไอดีสำหรับการรับรอง DLT ครบถ้วนกับกองยานเทศบาล 1,200 คันใน 90 วัน',
+    res3_cat:'เหมืองแร่', res3_title:'กองยานเหมืองแร่: ติดตามรถในเหมืองและเหมืองหินแบบเรียลไทม์',
+    res3_desc:'ผู้ประกอบการเหมืองแร่ใช้จีโอไอดีติดตามกองยานในพื้นที่เหมืองและเหมืองหิน เพิ่มประสิทธิภาพการทำงานและความปลอดภัยของรถบรรทุกหนัก',
     read_case:'อ่านกรณีศึกษา →',
 
     test_tag:'ความคิดเห็น', test_title:'ได้รับความไว้วางใจจากผู้นำอุตสาหกรรม',
@@ -1096,7 +1096,7 @@ const T = {
 
     about_tag:'About Geoid',
     about_title:"Thailand's Leading<br/>Fleet Management Provider",
-    about_p1:"Founded over 15 years ago, Geoid has grown to become Asia's most trusted GPS tracking and telematics company. We combine cutting-edge hardware with intelligent software platforms to help businesses manage their fleets with precision and confidence.",
+    about_p1:"Founded over 14 years ago, Geoid has grown to become Asia's most trusted GPS tracking and telematics company. We combine cutting-edge hardware with intelligent software platforms to help businesses manage their fleets with precision and confidence.",
     about_p2:"From small business fleets to enterprise logistics operations, our solutions scale to meet any requirement — delivering real-time insights that reduce costs, improve safety, and maximize efficiency.",
     about_affiliate:'Authorized Affiliate of Geoid Asia',
     about_cta:'Learn More',
@@ -1157,8 +1157,8 @@ const T = {
     res1_desc:'Deployed Geoid across 800 vehicles. Achieved 23% fuel savings within 6 months.',
     res2_cat:'Construction', res2_title:'Construction Company: Equipment Utilization +35%',
     res2_desc:'Real-time equipment tracking and geofencing reduced idle time and improved asset utilization by 35%.',
-    res3_cat:'Government', res3_title:'Government Agency: Full DLT Compliance in 90 Days',
-    res3_desc:'A government agency deployed Geoid for full DLT compliance across their 1,200-vehicle municipal fleet in 90 days.',
+    res3_cat:'Mining', res3_title:'Mining Fleet: Real-Time Tracking for Quarry & Mining Operations',
+    res3_desc:'A mining operator deployed Geoid to track their fleet across quarry and mining sites, improving heavy vehicle efficiency and on-site safety.',
     read_case:'Read Case Study →',
 
     test_tag:'Testimonials', test_title:'Trusted by Industry Leaders',
