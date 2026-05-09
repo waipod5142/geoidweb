@@ -816,32 +816,41 @@
       <div>
         <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:36px;">
           <h3 class="font-bold text-xl mb-6" style="font-family:'Barlow Condensed','Sarabun',sans-serif;" data-i18n="form_title">ส่งข้อความถึงเรา</h3>
-          <form class="space-y-4" onsubmit="return false;">
+          <form id="contactForm" class="space-y-4">
+            <!-- Web3Forms hidden fields -->
+            <!-- IMPORTANT: Replace YOUR_ACCESS_KEY_HERE with your key from web3forms.com -->
+            <input type="hidden" name="access_key" value="8dfa5422-37ee-4ee1-a855-12cea744e852">
+            <input type="hidden" name="subject" value="ข้อความใหม่จากเว็บไซต์ Geoid Thailand">
+            <input type="hidden" name="from_name" value="Geoid Thailand Website">
+            <input type="hidden" name="redirect" value="false">
+            <!-- Honeypot spam filter -->
+            <input type="checkbox" name="botcheck" style="display:none;">
+
             <div class="grid grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-semibold mb-1.5" style="color:#444;" data-i18n="form_fname">ชื่อ</label>
-                <input type="text" data-i18n-ph="ph_fname" placeholder="สมชาย" class="w-full px-4 py-2.5 text-sm rounded-lg outline-none" style="border:1px solid var(--border);background:#fafafa;font-family:'Sarabun','Source Sans 3',sans-serif;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'" />
+                <input type="text" name="first_name" data-i18n-ph="ph_fname" placeholder="สมชาย" class="w-full px-4 py-2.5 text-sm rounded-lg outline-none" style="border:1px solid var(--border);background:#fafafa;font-family:'Sarabun','Source Sans 3',sans-serif;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'" />
               </div>
               <div>
                 <label class="block text-xs font-semibold mb-1.5" style="color:#444;" data-i18n="form_lname">นามสกุล</label>
-                <input type="text" data-i18n-ph="ph_lname" placeholder="วิริยะพร" class="w-full px-4 py-2.5 text-sm rounded-lg outline-none" style="border:1px solid var(--border);background:#fafafa;font-family:'Sarabun','Source Sans 3',sans-serif;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'" />
+                <input type="text" name="last_name" data-i18n-ph="ph_lname" placeholder="วิริยะพร" class="w-full px-4 py-2.5 text-sm rounded-lg outline-none" style="border:1px solid var(--border);background:#fafafa;font-family:'Sarabun','Source Sans 3',sans-serif;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'" />
               </div>
             </div>
             <div>
               <label class="block text-xs font-semibold mb-1.5" style="color:#444;" data-i18n="form_company">บริษัท</label>
-              <input type="text" data-i18n-ph="ph_company" placeholder="บริษัท ของคุณ จำกัด" class="w-full px-4 py-2.5 text-sm rounded-lg outline-none" style="border:1px solid var(--border);background:#fafafa;font-family:'Sarabun','Source Sans 3',sans-serif;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'" />
+              <input type="text" name="company" data-i18n-ph="ph_company" placeholder="บริษัท ของคุณ จำกัด" class="w-full px-4 py-2.5 text-sm rounded-lg outline-none" style="border:1px solid var(--border);background:#fafafa;font-family:'Sarabun','Source Sans 3',sans-serif;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'" />
             </div>
             <div>
               <label class="block text-xs font-semibold mb-1.5" style="color:#444;" data-i18n="form_email">อีเมล</label>
-              <input type="email" placeholder="email@company.com" class="w-full px-4 py-2.5 text-sm rounded-lg outline-none" style="border:1px solid var(--border);background:#fafafa;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'" />
+              <input type="email" name="email" required placeholder="email@company.com" class="w-full px-4 py-2.5 text-sm rounded-lg outline-none" style="border:1px solid var(--border);background:#fafafa;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'" />
             </div>
             <div>
               <label class="block text-xs font-semibold mb-1.5" style="color:#444;" data-i18n="form_phone">โทรศัพท์</label>
-              <input type="tel" placeholder="+66 XX XXX XXXX" class="w-full px-4 py-2.5 text-sm rounded-lg outline-none" style="border:1px solid var(--border);background:#fafafa;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'" />
+              <input type="tel" name="phone" placeholder="+66 XX XXX XXXX" class="w-full px-4 py-2.5 text-sm rounded-lg outline-none" style="border:1px solid var(--border);background:#fafafa;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'" />
             </div>
             <div>
               <label class="block text-xs font-semibold mb-1.5" style="color:#444;" data-i18n="form_fleet">ขนาดกองยาน</label>
-              <select class="w-full px-4 py-2.5 text-sm rounded-lg outline-none" style="border:1px solid var(--border);background:#fafafa;color:#555;font-family:'Sarabun','Source Sans 3',sans-serif;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'">
+              <select name="fleet_size" class="w-full px-4 py-2.5 text-sm rounded-lg outline-none" style="border:1px solid var(--border);background:#fafafa;color:#555;font-family:'Sarabun','Source Sans 3',sans-serif;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'">
                 <option data-i18n-opt="form_fleet_0">เลือกขนาดกองยาน...</option>
                 <option data-i18n-opt="form_fleet_1">1–10 คัน</option>
                 <option data-i18n-opt="form_fleet_2">11–50 คัน</option>
@@ -852,10 +861,60 @@
             </div>
             <div>
               <label class="block text-xs font-semibold mb-1.5" style="color:#444;" data-i18n="form_message">ข้อความ</label>
-              <textarea rows="4" data-i18n-ph="ph_message" placeholder="บอกเราเกี่ยวกับความต้องการด้านการจัดการยานพาหนะของคุณ..." class="w-full px-4 py-2.5 text-sm rounded-lg outline-none resize-none" style="border:1px solid var(--border);background:#fafafa;font-family:'Sarabun','Source Sans 3',sans-serif;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'"></textarea>
+              <textarea name="message" rows="4" data-i18n-ph="ph_message" placeholder="บอกเราเกี่ยวกับความต้องการด้านการจัดการยานพาหนะของคุณ..." class="w-full px-4 py-2.5 text-sm rounded-lg outline-none resize-none" style="border:1px solid var(--border);background:#fafafa;font-family:'Sarabun','Source Sans 3',sans-serif;" onfocus="this.style.borderColor='#8DC63F'" onblur="this.style.borderColor='var(--border)'"></textarea>
             </div>
-            <button type="submit" class="btn-green w-full py-3 text-sm font-bold tracking-wide" style="border-radius:8px;" data-i18n="form_submit">ส่งข้อความ</button>
+            <button id="contactSubmitBtn" type="submit" class="btn-green w-full py-3 text-sm font-bold tracking-wide" style="border-radius:8px;" data-i18n="form_submit">ส่งข้อความ</button>
+
+            <!-- Success message (hidden by default) -->
+            <div id="formSuccess" style="display:none;background:#f0f9e8;border:1px solid #8DC63F;border-radius:8px;padding:16px 20px;text-align:center;">
+              <p class="font-bold text-sm mb-1" style="color:#3a6e00;font-family:'Sarabun','Source Sans 3',sans-serif;">ส่งข้อความสำเร็จแล้ว!</p>
+              <p class="text-xs" style="color:#5a8a20;font-family:'Sarabun','Source Sans 3',sans-serif;">ขอบคุณที่ติดต่อเรา ทีมงานจะตอบกลับภายใน 1 วันทำการ</p>
+            </div>
+
+            <!-- Error message (hidden by default) -->
+            <div id="formError" style="display:none;background:#fff0f0;border:1px solid #e04040;border-radius:8px;padding:16px 20px;text-align:center;">
+              <p class="font-bold text-sm mb-1" style="color:#b00000;font-family:'Sarabun','Source Sans 3',sans-serif;">เกิดข้อผิดพลาด</p>
+              <p class="text-xs" style="color:#c04040;font-family:'Sarabun','Source Sans 3',sans-serif;">ไม่สามารถส่งข้อความได้ กรุณาลองใหม่อีกครั้ง หรือติดต่อเราทางโทรศัพท์</p>
+            </div>
           </form>
+
+          <script>
+            document.getElementById('contactForm').addEventListener('submit', async function(e) {
+              e.preventDefault();
+              var btn = document.getElementById('contactSubmitBtn');
+              var successEl = document.getElementById('formSuccess');
+              var errorEl = document.getElementById('formError');
+
+              btn.disabled = true;
+              btn.textContent = 'กำลังส่ง...';
+              btn.style.opacity = '0.7';
+              successEl.style.display = 'none';
+              errorEl.style.display = 'none';
+
+              try {
+                var formData = new FormData(this);
+                var data = Object.fromEntries(formData);
+                var res = await fetch('https://api.web3forms.com/submit', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                  body: JSON.stringify(data)
+                });
+                var json = await res.json();
+                if (json.success) {
+                  successEl.style.display = 'block';
+                  this.reset();
+                } else {
+                  errorEl.style.display = 'block';
+                }
+              } catch (err) {
+                errorEl.style.display = 'block';
+              } finally {
+                btn.disabled = false;
+                btn.textContent = 'ส่งข้อความ';
+                btn.style.opacity = '1';
+              }
+            });
+          </script>
         </div>
       </div>
     </div>

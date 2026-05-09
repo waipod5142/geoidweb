@@ -52,3 +52,57 @@
 - Do not stop after one screenshot pass
 - Do not use `transition-all`
 - Do not use default Tailwind blue/indigo as primary color
+
+---
+
+## Screenshot Workflow (Mac)
+- Puppeteer is at `/Users/waipodyeamkeaw/Documents/logistics/node_modules/puppeteer`
+- Chrome: `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`
+- To capture a specific element (e.g. hero section), write a temp `.mjs` script using the puppeteer path above, run it, then delete it.
+
+---
+
+## Site Content Record
+*Current values in `index.html` — update this section whenever content changes.*
+
+### Company
+- **Name (TH):** บริษัท จีโอไอดี (ประเทศไทย) จำกัด
+- **Name (EN):** Geoid (Thailand) Co., Ltd
+- **Registration No.:** 0145568001277
+- **Affiliate badge:** ตัวแทนที่ได้รับการรับรองอย่างเป็นทางการจาก Geoid Asia / Authorized Affiliate of Geoid Asia
+
+### Contact
+- **Email:** geoid.thailand2025@gmail.com
+- **Phone:** +66 81 4998528
+- **Address:** 242/2 หมู่ 3 ต.บ้านเลน อ.บางปะอิน จ.พระนครศรีอยุธยา 13160
+- **Hours:** จันทร์–ศุกร์ 8:30–17:30 น.
+
+### Hero Stats
+- **Clients:** 900+
+- **Vehicles tracked:** 15K+
+- **Years experience:** 14+ (sub-label: "ผู้นำด้านเทเลแมติกส์ในเอเชีย" / "Telematics Leader in Asia")
+
+### Hero Section
+- **Background:** Unsplash truck/highway photo (`photo-1592838064575-70ed626d3a0e`) with dark gradient overlay
+- **Right panel:** SVG live-tracking dashboard widget (restored — not a photo)
+
+### Technology Partners (8 cards with logos via Google favicon service)
+1. Teltonika Networks — อุปกรณ์ IoT
+2. Queclink — อุปกรณ์ GPS
+3. Google Maps Platform — แผนที่และการนำทาง
+4. Amazon Web Services — โครงสร้างพื้นฐานคลาวด์
+5. Jimi IoT — เครื่องติดตาม GPS (`jimiiot.com`)
+6. Wialon — แพลตฟอร์มเทเลแมติกส์
+7. True — การเชื่อมต่อ 4G/LTE
+8. Overleap — การแปลงสู่ดิจิทัล / Digital Transformation (logo: `overleap.tech/wp-content/uploads/2024/11/overleap.png`)
+
+### Certifications
+- **DLT:** กรมขนส่งทางบก — link: `https://www.dlt.go.th/th` — logo: `dlt.go.th/logo.png`
+- **NBTC:** สำนักงานคณะกรรมการกิจการกระจายเสียง กิจการโทรทัศน์ และกิจการโทรคมนาคมแห่งชาติ — link: `https://nbtc.go.th/Home.aspx?lang=th-th` — logo: Google favicon service
+- Displayed in footer as white-card badges under "รับรองโดย"
+- Also referenced in: why5 card ("พร้อมสำหรับการรับรอง DLT และ NBTC"), comparison table row ("รับรองโดย DLT และ NBTC")
+
+### Case Studies
+1. **Logistics Fleet** — โลจิสติกส์
+2. **Construction Fleet** — ก่อสร้าง
+3. **Mining Fleet** — เหมืองแร่ (quarry & mining industry — replaced "Government Fleet")
