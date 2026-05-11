@@ -141,6 +141,20 @@
     ::-webkit-scrollbar-track { background:#f1f1f1; }
     ::-webkit-scrollbar-thumb { background:#ccc; border-radius:3px; }
     ::-webkit-scrollbar-thumb:hover { background:var(--green); }
+
+    /* AI Notifications Section */
+    .notify-chip { display:inline-flex; align-items:center; gap:4px; padding:6px 12px; border:1px solid rgba(141,198,63,0.3); border-radius:20px; font-size:12px; color:#bbb; font-family:'Sarabun',sans-serif; background:rgba(141,198,63,0.05); transition:border-color 0.2s, background 0.2s, color 0.2s; cursor:default; }
+    .notify-chip:hover { border-color:var(--green); background:rgba(141,198,63,0.12); color:#fff; }
+    .phone-mockup { width:280px; max-width:100%; background:#0d0d0d; border-radius:36px; border:2px solid rgba(255,255,255,0.1); overflow:hidden; display:flex; flex-direction:column; box-shadow:0 32px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04); height:450px; }
+    .channel-badge { display:inline-flex; align-items:center; gap:8px; padding:9px 18px; border-radius:24px; cursor:default; transition:transform 0.2s, box-shadow 0.2s; }
+    .channel-badge:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
+    .chat-bubble-bot { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.07); border-radius:4px 10px 10px 10px; padding:10px 12px; }
+    .how-step { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:28px 24px; text-align:center; transition:border-color 0.25s, background 0.25s; }
+    .how-step:hover { border-color:rgba(141,198,63,0.4); background:rgba(141,198,63,0.05); }
+    .how-step-num { font-family:'Barlow Condensed','Sarabun',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.15em; color:rgba(141,198,63,0.45); margin-bottom:12px; }
+    .how-step-icon { width:52px; height:52px; border-radius:12px; background:rgba(141,198,63,0.08); display:flex; align-items:center; justify-content:center; margin:0 auto 14px; }
+    @keyframes notifyPulse { 0%,100% { opacity:1; box-shadow:0 0 0 0 rgba(78,255,145,0.5); } 60% { opacity:0.85; box-shadow:0 0 0 6px rgba(78,255,145,0); } }
+    .notify-pulse { animation:notifyPulse 2s ease-in-out infinite; }
   </style>
 </head>
 <body>
@@ -437,6 +451,146 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     AI SMART NOTIFICATIONS
+════════════════════════════════════════ -->
+<section id="ai-notify" style="background:#111111;" class="py-20">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <span class="section-tag" data-i18n="notify_tag">AI แจ้งเตือนอัจฉริยะ</span>
+      <h2 class="section-title text-4xl md:text-5xl mb-4" style="color:#fff;" data-i18n="notify_title">แจ้งเตือนอัจฉริยะผ่าน LINE และ Telegram</h2>
+      <p class="text-base max-w-2xl mx-auto" style="color:#999;font-family:'Sarabun','Source Sans 3',sans-serif;" data-i18n="notify_desc">ระบบ AI ตรวจจับเหตุการณ์และส่งข้อความถึงคนขับและเจ้าของรถทันที ไม่ว่าจะเป็นพฤติกรรมเสี่ยง การออกนอกพื้นที่ หรือความผิดปกติของเชื้อเพลิง</p>
+    </div>
+
+    <!-- 2-col: copy + phone mockup -->
+    <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+
+      <!-- Left: alert chips + channel badges -->
+      <div>
+        <div class="mb-10">
+          <h3 style="font-family:'Barlow Condensed','Sarabun',sans-serif;font-size:12px;font-weight:700;color:#666;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:14px;" data-i18n="notify_alerts_title">ประเภทการแจ้งเตือน</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="notify-chip" data-i18n="alert1">🚨 ขับรถเร็วเกินกำหนด</span>
+            <span class="notify-chip" data-i18n="alert2">😴 ตรวจจับการหลับใน</span>
+            <span class="notify-chip" data-i18n="alert3">📍 ออกนอกพื้นที่</span>
+            <span class="notify-chip" data-i18n="alert4">⛽ ความผิดปกติของเชื้อเพลิง</span>
+            <span class="notify-chip" data-i18n="alert5">📵 กล้องขาดการเชื่อมต่อ</span>
+            <span class="notify-chip" data-i18n="alert6">🔧 ถึงกำหนดซ่อมบำรุง</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-family:'Barlow Condensed','Sarabun',sans-serif;font-size:12px;font-weight:700;color:#666;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:16px;" data-i18n="notify_channels_title">ช่องทางการแจ้งเตือน</h3>
+          <div class="flex flex-wrap gap-4 items-center">
+            <div class="channel-badge" style="background:#00B900;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2z"/></svg>
+              <span style="font-family:'Barlow',sans-serif;font-weight:700;font-size:14px;color:#fff;">LINE</span>
+            </div>
+            <div class="channel-badge" style="background:#2AABEE;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M22.26 2.73L2.57 10.14c-1.27.5-1.26 1.2-.23 1.5l5.1 1.6 11.8-7.4c.55-.33 1.06-.15.64.2L9.6 16.17l-.34 5.17c.5 0 .72-.23 1-.5l2.42-2.34 5.03 3.7c.92.51 1.6.25 1.83-.86l3.3-15.6c.33-1.34-.5-1.95-1.58-1.04z"/></svg>
+              <span style="font-family:'Barlow',sans-serif;font-weight:700;font-size:14px;color:#fff;">Telegram</span>
+            </div>
+            <span style="color:#555;font-size:12px;font-family:'Sarabun',sans-serif;" data-i18n="notify_or_both">หรือทั้งสองช่องทาง</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: phone mockup -->
+      <div class="flex justify-center">
+        <div class="phone-mockup">
+          <!-- Status bar -->
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 18px 4px;color:#ccc;font-size:10px;font-family:'Barlow',sans-serif;font-weight:600;">
+            <span>14:32</span>
+            <div style="display:flex;gap:5px;align-items:center;">
+              <svg width="12" height="9" viewBox="0 0 12 9" fill="#ccc"><rect x="0" y="6" width="2" height="3" rx="0.5"/><rect x="3" y="4" width="2" height="5" rx="0.5"/><rect x="6" y="2" width="2" height="7" rx="0.5"/><rect x="9" y="0" width="2" height="9" rx="0.5"/></svg>
+              <svg width="14" height="10" viewBox="0 0 24 16" fill="none"><path d="M1 5.5A14.5 14.5 0 0 1 23 5.5" stroke="#ccc" stroke-width="2" stroke-linecap="round"/><path d="M4 9a9.5 9.5 0 0 1 16 0" stroke="#ccc" stroke-width="2" stroke-linecap="round"/><path d="M8 12.5a4.5 4.5 0 0 1 8 0" stroke="#ccc" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="15.5" r="1.5" fill="#ccc"/></svg>
+              <span>98%</span>
+            </div>
+          </div>
+          <!-- App header: Telegram style -->
+          <div style="background:#2AABEE;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+            <div style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🤖</div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;color:#fff;">Geoid Alert Bot</div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.8);font-family:'Barlow',sans-serif;" data-i18n="notify_bot_online">ออนไลน์อยู่</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:5px;flex-shrink:0;">
+              <div class="notify-pulse" style="width:7px;height:7px;border-radius:50%;background:#4eff91;"></div>
+              <span style="font-size:9px;color:rgba(255,255,255,0.9);font-family:'Barlow',sans-serif;" data-i18n="notify_live_label">สด</span>
+            </div>
+          </div>
+          <!-- Chat body -->
+          <div style="background:#1a1a2e;flex:1;padding:12px 10px;overflow:hidden;display:flex;flex-direction:column;gap:8px;min-height:0;">
+            <div style="text-align:center;"><span style="background:rgba(255,255,255,0.07);color:#777;font-size:9px;padding:2px 10px;border-radius:10px;font-family:'Barlow',sans-serif;" data-i18n="notify_today">วันนี้ • 14:32</span></div>
+            <!-- Alert 1: risky driving -->
+            <div class="chat-bubble-bot">
+              <div style="font-size:10px;font-weight:700;color:#ff6b6b;margin-bottom:5px;">⚠️ <span data-i18n="notify_msg1_head">แจ้งเตือน: พบพฤติกรรมเสี่ยง</span></div>
+              <div style="font-size:9.5px;color:#ccc;line-height:1.6;font-family:'Sarabun',sans-serif;">
+                <span data-i18n="notify_msg1_driver">คนขับ:</span> สมชาย ก. &nbsp;|&nbsp; <span data-i18n="notify_msg1_time">เวลา:</span> 14:32 น.<br>
+                <span data-i18n="notify_msg1_loc">ตำแหน่ง:</span> ถ.พหลโยธิน กม.52
+              </div>
+              <div style="margin-top:6px;padding-top:5px;border-top:1px solid rgba(255,255,255,0.06);font-size:9px;color:#2AABEE;font-family:'Barlow',sans-serif;font-weight:600;" data-i18n="notify_map_link">📍 ดูแผนที่ →</div>
+            </div>
+            <!-- Alert 2: LINE geofence -->
+            <div style="border-left:3px solid #00B900;background:rgba(0,185,0,0.07);border-radius:0 8px 8px 0;padding:8px 10px;">
+              <div style="color:#4cd964;font-size:9px;font-weight:700;margin-bottom:3px;font-family:'Barlow',sans-serif;display:flex;align-items:center;gap:5px;">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="#4cd964"><path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2z"/></svg>
+                LINE <span data-i18n="notify_line_label">• จีโอไอดี แจ้งเตือน</span>
+              </div>
+              <div style="font-size:9.5px;color:#ddd;font-family:'Sarabun',sans-serif;" data-i18n="notify_msg2">🚨 รถทะเบียน กข-1234 ออกนอกพื้นที่กำหนด</div>
+            </div>
+            <!-- Alert 3: fuel -->
+            <div class="chat-bubble-bot">
+              <div style="font-size:10px;font-weight:700;color:#f59e0b;margin-bottom:4px;">⛽ <span data-i18n="notify_msg3_head">ตรวจพบความผิดปกติของเชื้อเพลิง</span></div>
+              <div style="font-size:9.5px;color:#ccc;font-family:'Sarabun',sans-serif;" data-i18n="notify_msg3_body">ปริมาณเชื้อเพลิงลดลงผิดปกติ 15 ลิตร</div>
+              <div style="margin-top:4px;font-size:9px;color:#444;font-family:'Barlow',sans-serif;" data-i18n="notify_delivered">ส่งถึงเจ้าของรถแล้ว ✓✓</div>
+            </div>
+          </div>
+          <!-- Home indicator -->
+          <div style="padding:8px;display:flex;justify-content:center;background:#0d0d0d;">
+            <div style="width:80px;height:4px;background:rgba(255,255,255,0.12);border-radius:2px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- How it works: 3 steps -->
+    <div style="border-top:1px solid rgba(255,255,255,0.07);padding-top:48px;">
+      <p class="text-center text-xs font-semibold tracking-widest mb-10" style="color:#8DC63F;font-family:'Barlow Condensed','Sarabun',sans-serif;letter-spacing:0.15em;" data-i18n="notify_how_tag">วิธีการทำงาน</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="how-step">
+          <div class="how-step-num">01</div>
+          <div class="how-step-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="rgba(141,198,63,0.2)" stroke="#8DC63F" stroke-width="1.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#8DC63F" stroke-width="1.5" stroke-linecap="round"/><path d="M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M19.07 4.93l-2.12 2.12M7.05 16.95l-2.12 2.12" stroke="#8DC63F" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div style="font-family:'Barlow Condensed','Sarabun',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;" data-i18n="notify_step1_title">AI ตรวจจับ</div>
+          <p style="font-size:13px;color:#777;font-family:'Sarabun',sans-serif;line-height:1.7;" data-i18n="notify_step1_desc">กล้องและเซ็นเซอร์วิเคราะห์พฤติกรรมแบบเรียลไทม์</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">02</div>
+          <div class="how-step-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#8DC63F" stroke-width="1.5"/><path d="M8 10h8M8 14h5" stroke="#8DC63F" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div style="font-family:'Barlow Condensed','Sarabun',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;" data-i18n="notify_step2_title">ระบบประมวลผล</div>
+          <p style="font-size:13px;color:#777;font-family:'Sarabun',sans-serif;line-height:1.7;" data-i18n="notify_step2_desc">แพลตฟอร์มระบุเหตุการณ์และสร้างข้อความแจ้งเตือน</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">03</div>
+          <div class="how-step-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="#8DC63F" stroke-width="1.5"/><path d="M10 17h4M12 6v5l3 2" stroke="#8DC63F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div style="font-family:'Barlow Condensed','Sarabun',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;" data-i18n="notify_step3_title">ส่งถึงมือถือ</div>
+          <p style="font-size:13px;color:#777;font-family:'Sarabun',sans-serif;line-height:1.7;" data-i18n="notify_step3_desc">คนขับและเจ้าของรถได้รับแจ้งเตือนภายใน 5 วินาที</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -802,7 +956,7 @@
             <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#8DC63F"/><circle cx="12" cy="9" r="2.5" fill="#fff"/></svg></div>
             <div>
               <div class="text-sm font-semibold mb-0.5" style="color:#222;" data-i18n="con_hq_label">สำนักงาน</div>
-              <div class="text-sm" style="color:#666;font-family:'Sarabun','Source Sans 3',sans-serif;line-height:1.7;" data-i18n="con_hq_val">บริษัท จีโอไอดี (ประเทศไทย) จำกัด<br/>242/2 หมู่ 3 ต.บ้านเลน<br/>อ.บางปะอิน จ.พระนครศรีอยุธยา 13160<br/>ทะเบียนนิติบุคคลเลขที่ 0145568001277</div>
+              <div class="text-sm" style="color:#666;font-family:'Sarabun','Source Sans 3',sans-serif;line-height:1.7;" data-i18n="con_hq_val">บริษัท จีโอไอดี (ไทยแลนด์) จำกัด<br/>242/2 หมู่ 3 ต.บ้านเลน<br/>อ.บางปะอิน จ.พระนครศรีอยุธยา 13160<br/>ทะเบียนนิติบุคคลเลขที่ 0145568001277</div>
             </div>
           </div>
           <div class="flex items-start gap-4">
@@ -1011,7 +1165,7 @@
   </div>
   <div style="border-top:1px solid rgba(255,255,255,0.07);">
     <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-      <div class="text-xs" style="color:#666;" data-i18n="foot_copy">© 2568 บริษัท จีโอไอดี (ประเทศไทย) จำกัด สงวนลิขสิทธิ์</div>
+      <div class="text-xs" style="color:#666;" data-i18n="foot_copy">© 2568 บริษัท จีโอไอดี (ไทยแลนด์) จำกัด สงวนลิขสิทธิ์</div>
       <div class="flex gap-6">
         <a href="#" class="footer-link" style="font-size:12px;" data-i18n="foot_privacy">นโยบายความเป็นส่วนตัว</a>
         <a href="#" class="footer-link" style="font-size:12px;" data-i18n="foot_terms">ข้อกำหนดการให้บริการ</a>
@@ -1081,6 +1235,23 @@ const T = {
     why4_title:'การผสานรวม API และระบบ', why4_desc:'Open REST APIs และการผสานรวมสำเร็จรูปกับระบบ ERP, TMS และ WMS เชื่อมต่อจีโอไอดีกับขั้นตอนการทำงานที่มีอยู่ได้อย่างราบรื่น',
     why5_title:'พร้อมสำหรับการรับรอง DLT และ NBTC', why5_desc:'ได้รับการรับรองจากกรมขนส่งทางบก และสำนักงานคณะกรรมการกิจการกระจายเสียง กิจการโทรทัศน์ และกิจการโทรคมนาคมแห่งชาติ (NBTC) อย่างครบถ้วน ปฏิบัติตามกฎระเบียบโดยไม่ต้องยุ่งยาก',
 
+    notify_tag:'AI แจ้งเตือนอัจฉริยะ', notify_title:'แจ้งเตือนอัจฉริยะผ่าน LINE และ Telegram',
+    notify_desc:'ระบบ AI ตรวจจับเหตุการณ์และส่งข้อความถึงคนขับและเจ้าของรถทันที ไม่ว่าจะเป็นพฤติกรรมเสี่ยง การออกนอกพื้นที่ หรือความผิดปกติของเชื้อเพลิง',
+    notify_alerts_title:'ประเภทการแจ้งเตือน', notify_channels_title:'ช่องทางการแจ้งเตือน',
+    alert1:'🚨 ขับรถเร็วเกินกำหนด', alert2:'😴 ตรวจจับการหลับใน', alert3:'📍 ออกนอกพื้นที่',
+    alert4:'⛽ ความผิดปกติของเชื้อเพลิง', alert5:'📵 กล้องขาดการเชื่อมต่อ', alert6:'🔧 ถึงกำหนดซ่อมบำรุง',
+    notify_or_both:'หรือทั้งสองช่องทาง',
+    notify_bot_online:'ออนไลน์อยู่', notify_live_label:'สด', notify_today:'วันนี้ • 14:32',
+    notify_msg1_head:'แจ้งเตือน: พบพฤติกรรมเสี่ยง', notify_msg1_driver:'คนขับ:', notify_msg1_time:'เวลา:', notify_msg1_loc:'ตำแหน่ง:',
+    notify_map_link:'📍 ดูแผนที่ →', notify_line_label:'• จีโอไอดี แจ้งเตือน',
+    notify_msg2:'🚨 รถทะเบียน กข-1234 ออกนอกพื้นที่กำหนด',
+    notify_msg3_head:'ตรวจพบความผิดปกติของเชื้อเพลิง', notify_msg3_body:'ปริมาณเชื้อเพลิงลดลงผิดปกติ 15 ลิตร',
+    notify_delivered:'ส่งถึงเจ้าของรถแล้ว ✓✓',
+    notify_how_tag:'วิธีการทำงาน',
+    notify_step1_title:'AI ตรวจจับ', notify_step1_desc:'กล้องและเซ็นเซอร์วิเคราะห์พฤติกรรมแบบเรียลไทม์',
+    notify_step2_title:'ระบบประมวลผล', notify_step2_desc:'แพลตฟอร์มระบุเหตุการณ์และสร้างข้อความแจ้งเตือน',
+    notify_step3_title:'ส่งถึงมือถือ', notify_step3_desc:'คนขับและเจ้าของรถได้รับแจ้งเตือนภายใน 5 วินาที',
+
     tbl_feature:'คุณสมบัติ', tbl_others:'รายอื่น', tbl_varies:'แตกต่างกัน', tbl_partial:'บางส่วน',
     tbl1:'ติดตามแบบเรียลไทม์ (&lt;10 วินาที)', tbl2:'รับรองโดย DLT และ NBTC',
     tbl3:'สนับสนุนในพื้นที่ 24/7', tbl4:'Open API', tbl5:'ติดตามเชื้อเพลิง', tbl6:'แอปมือถือ',
@@ -1133,7 +1304,7 @@ const T = {
     con_tag:'ติดต่อเรา', con_title:'ติดต่อเรา',
     con_desc:'พร้อมที่จะเปลี่ยนแปลงการดำเนินงานยานพาหนะของคุณหรือยัง? ผู้เชี่ยวชาญของเราพร้อมช่วยค้นหาโซลูชันที่เหมาะสม ไม่ว่าจะมีขนาดหรือความซับซ้อนเพียงใด',
     con_hq_label:'สำนักงาน',
-    con_hq_val:'บริษัท จีโอไอดี (ประเทศไทย) จำกัด<br/>242/2 หมู่ 3 ต.บ้านเลน<br/>อ.บางปะอิน จ.พระนครศรีอยุธยา 13160<br/>ทะเบียนนิติบุคคลเลขที่ 0145568001277',
+    con_hq_val:'บริษัท จีโอไอดี (ไทยแลนด์) จำกัด<br/>242/2 หมู่ 3 ต.บ้านเลน<br/>อ.บางปะอิน จ.พระนครศรีอยุธยา 13160<br/>ทะเบียนนิติบุคคลเลขที่ 0145568001277',
     con_phone_label:'โทรศัพท์', con_email_label:'อีเมล',
     con_hours_label:'เวลาทำการ', con_hours_val:'จันทร์–ศุกร์ 8:00–17:00 น.',
 
@@ -1155,7 +1326,7 @@ const T = {
     foot_ind4:'การแพทย์', foot_ind5:'การเกษตร', foot_ind6:'น้ำมันและก๊าซ',
     foot_comp1:'เกี่ยวกับจีโอไอดี', foot_comp2:'ลูกค้า', foot_comp3:'พาร์ทเนอร์',
     foot_comp4:'สนับสนุน', foot_comp5:'ติดต่อ', foot_comp6:'ร่วมงานกับเรา',
-    foot_copy:'© 2568 บริษัท จีโอไอดี (ประเทศไทย) จำกัด สงวนลิขสิทธิ์',
+    foot_copy:'© 2568 บริษัท จีโอไอดี (ไทยแลนด์) จำกัด สงวนลิขสิทธิ์',
     foot_privacy:'นโยบายความเป็นส่วนตัว', foot_terms:'ข้อกำหนดการให้บริการ', foot_cookie:'นโยบายคุกกี้',
   },
 
@@ -1212,6 +1383,23 @@ const T = {
     why3_title:'Local Support & Expertise', why3_desc:'On-the-ground teams across Thailand providing installation, training, and 24/7 technical support in your language.',
     why4_title:'API & System Integration', why4_desc:'Open REST APIs and pre-built integrations with ERP, TMS, and WMS systems. Connect Geoid into your existing workflows seamlessly.',
     why5_title:'DLT & NBTC Compliance Ready', why5_desc:"Fully certified by Thailand's Department of Land Transport (DLT) and the National Broadcasting and Telecommunications Commission (NBTC). Stay compliant without extra complexity.",
+
+    notify_tag:'AI Smart Alerts', notify_title:'Smart Notifications via LINE & Telegram',
+    notify_desc:'The AI detects incidents and instantly pushes messages to drivers and fleet owners — from risky driving and geofence breaches to fuel anomalies.',
+    notify_alerts_title:'Alert Types', notify_channels_title:'Notification Channels',
+    alert1:'🚨 Speeding', alert2:'😴 Drowsiness Detected', alert3:'📍 Geofence Breach',
+    alert4:'⛽ Fuel Anomaly', alert5:'📵 Camera Offline', alert6:'🔧 Maintenance Due',
+    notify_or_both:'or both channels',
+    notify_bot_online:'Online', notify_live_label:'Live', notify_today:'Today • 14:32',
+    notify_msg1_head:'Alert: Risky Behavior Detected', notify_msg1_driver:'Driver:', notify_msg1_time:'Time:', notify_msg1_loc:'Location:',
+    notify_map_link:'📍 View Map →', notify_line_label:'• Geoid Alerts',
+    notify_msg2:'🚨 Vehicle กข-1234 has exited the designated zone',
+    notify_msg3_head:'Fuel Anomaly Detected', notify_msg3_body:'Unusual fuel drop of 15 liters detected',
+    notify_delivered:'Delivered to fleet owner ✓✓',
+    notify_how_tag:'How It Works',
+    notify_step1_title:'AI Detects', notify_step1_desc:'Cameras and sensors analyze behavior in real time',
+    notify_step2_title:'System Processes', notify_step2_desc:'The platform identifies the event and generates an alert message',
+    notify_step3_title:'Sent to Mobile', notify_step3_desc:'Drivers and fleet owners receive the alert within 5 seconds',
 
     tbl_feature:'Feature', tbl_others:'Others', tbl_varies:'Varies', tbl_partial:'Partial',
     tbl1:'Real-time tracking (&lt;10s)', tbl2:'DLT & NBTC Certified',
